@@ -13,15 +13,15 @@
   <br>
 
   <!-- Cards -->
-  @for (item of [1,2,3,4]; track $index) {
+  @for (i of [0,1,2,3]; track i) {
     <div class="row">
-      <div class="card">title</div>
-      <div class="card">title</div>
-      <div class="card">title</div>
-      <div class="card">title</div>
+    @for (j of [0,1,2,3]; track j) {
+        <div class="card">{{cards[i * 4 + j].title}}</div>
+      }
     </div>
   }
 
+  <!-- Buttons -->
   <br>
   <div class="row" style="width: 20%;">
     <button class="button-3" role="button">Shuffle</button>
