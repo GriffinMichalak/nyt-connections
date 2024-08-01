@@ -6,8 +6,8 @@ The app is available at https://nyt-connections-nine.vercel.app/.
 
 ## Images
 <div style="display: flex; justify-content: space-between">
-    <img src="/src/assets/images/connections1.png">
-    <img src="/src/assets/images/connections2.png" >
+    <img src="/src/assets/images/connections1.png" width="100px" height="100px">
+    <img src="/src/assets/images/connections2.png" width="100px" height="100px">
 </div>
 
 ## Installation
