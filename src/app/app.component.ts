@@ -48,11 +48,14 @@ export class AppComponent implements OnInit {
   }
 
   selectCard(card: Card) {
+    // deselect card
     if (card.selected) {
       card.selected = false;
       this.selectedCount--;
       this.selectedCards.pop();
-    } else {
+    } 
+    // select card if possible
+    else {
       if (this.selectedCount < this.maxSelections) {
         card.selected = true;
         this.selectedCount++;
@@ -78,11 +81,13 @@ export class AppComponent implements OnInit {
     if (allSameCategory) {
       console.log('correct');
       this.selectedCards.forEach(card => card.found = true);
+      this.connectionsFound++; 
     } else {
       console.log('incorrect');
       this.deselectAll();
       this.mistakes--;
     }
+    this.deselectAll();
   }
   
 

@@ -1,6 +1,7 @@
 <!-- https://nyt-connections-nine.vercel.app/ -->
 
 <div class="main">
+  <!-- LOSE -->
   @if (mistakes === 0) {
     <div style="text-align: center;">
       <br><br><br><br><br>
@@ -10,6 +11,7 @@
        </div>  
     </div>
   }
+  <!-- WIN -->
   @else if (connectionsFound == 4) {
     <div style="text-align: center;">
       <br><br><br><br><br>
@@ -19,6 +21,8 @@
        </div>  
     </div>   
   }
+
+  <!-- DEFAULT -->
   @else {
     <!-- Heading -->
     <div class="heading">
@@ -31,13 +35,33 @@
     @for (i of [0,1,2,3]; track i) {
       <div class="row">
       @for (j of [0,1,2,3]; track j) {
-          <div 
-          (click)="selectCard(cards[i * 4 + j])"
-          [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
-          [style.background-color]="cards[i * 4 + j].selected ? '#555555' : '#e5e4e2'"
-          [style.color]="cards[i * 4 + j].selected ? '#ffffff' : 'black'">
-          {{cards[i * 4 + j].title}}</div>
-        }
+          <!-- Card is already found -->
+          @if (cards[i * 4 + j].found) {
+            <div 
+            [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
+            [style.background-color]="cards[i * 4 + j].color"
+            [style.color] = "'black'">
+            {{cards[i * 4 + j].title}}</div>
+          }
+        <!-- Card is Not Selected -->
+          @else if (!cards[i * 4 + j].selected) {
+            <div 
+            (click)="selectCard(cards[i * 4 + j])"
+            [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
+            [style.background-color] = "'#e5e4e2'"
+            [style.color] = "'black'">
+            {{cards[i * 4 + j].title}}</div>
+          }
+          <!-- Case 2: Card is Selected -->
+          @else if (cards[i * 4 + j].selected) {
+            <div 
+            (click)="selectCard(cards[i * 4 + j])"
+            [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
+            [style.background-color] = "'#555555'"
+            [style.color] = "'white'">
+            {{cards[i * 4 + j].title}}</div>
+          }
+          }
       </div>
     }
   
