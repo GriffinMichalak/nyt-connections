@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  maxSelections = 4;
+  selectedCount = 0;
   cards: Card[] = [
     // YELLOW
     new Card('GRUFF', 'RASPY', '#f9df6d', false, false),
@@ -37,9 +39,18 @@ export class AppComponent {
     new Card('KISS', 'FRENCH ___', '#ba81c5', false, false)
   ]; 
 
-  selectCard(card: Card): void {
-    card.selected = !card.selected; 
-    console.log(card);
+  selectCard(card: Card) {
+    if (card.selected) {
+      card.selected = false;
+      this.selectedCount--;
+    } else {
+      if (this.selectedCount < this.maxSelections) {
+        card.selected = true;
+        this.selectedCount++;
+      } else {
+        // alert('You can only select up to 4 cards.');
+      }
+    }
   }
 
   title = 'nyt-connections';
