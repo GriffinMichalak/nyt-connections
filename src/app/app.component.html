@@ -1,35 +1,31 @@
 <!-- https://nyt-connections-nine.vercel.app/ -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <!-- Heading -->
-  <div class="heading">
-    <h1>Connections</h1>
-    <p>Create four groups of four!</p>
-  </div>
-  <br>
-
-  <!-- Cards -->
-  @for (i of [0,1,2,3]; track i) {
-    <div class="row">
-    @for (j of [0,1,2,3]; track j) {
-        <div class="card">{{cards[i * 4 + j].title}}</div>
-      }
-    </div>
-  }
-
-  <!-- Buttons -->
-  <br>
-  <div class="row" style="width: 20%;">
-    <button class="button-3" role="button">Shuffle</button>
-    <button class="button-3" role="button">Deselect All</button>
-    <button class="button-3" role="button">Submit</button>
-  </div>
-
-
-</body>
-</html>
+ <div class="main">
+   <!-- Heading -->
+   <div class="heading">
+     <h1>Connections</h1>
+     <p>Create four groups of four!</p>
+   </div>
+   <br>
+ 
+   <!-- Cards -->
+   @for (i of [0,1,2,3]; track i) {
+     <div class="row">
+     @for (j of [0,1,2,3]; track j) {
+         <div 
+         (click)="selectCard(cards[i * 4 + j])"
+         [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
+         [style.background-color]="cards[i * 4 + j].selected ? '#555555' : '#e5e4e2'"
+         [style.color]="cards[i * 4 + j].selected ? '#ffffff' : 'black'">
+         {{cards[i * 4 + j].title}}</div>
+       }
+     </div>
+   }
+ 
+   <!-- Buttons -->
+   <br>
+   <div class="row" style="width: 20%;">
+     <button class="button-3" role="button">Shuffle</button>
+     <button class="button-3" role="button">Deselect All</button>
+     <button class="button-3" role="button">Submit</button>
+   </div>
+ </div>
