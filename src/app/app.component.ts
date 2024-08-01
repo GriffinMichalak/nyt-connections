@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+[x: string]: any;
   mistakes = 4; 
   connectionsFound = 0; 
   maxSelections = 4;
@@ -82,6 +83,7 @@ export class AppComponent implements OnInit {
       console.log('correct');
       this.selectedCards.forEach(card => card.found = true);
       this.connectionsFound++; 
+      this.shuffleCards();
     } else {
       console.log('incorrect');
       this.deselectAll();
@@ -99,17 +101,25 @@ export class AppComponent implements OnInit {
     location.reload();
   }
 
-  shuffle(array: any[]) {
-    for (var i = array.length - 1; i > 0; i--) { 
-  
-      var j = Math.floor(Math.random() * (i + 1));
-                 
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-  }
-     
-  return array;
+  shuffle(cards: Card[]): Card[] {
+    const foundCards: Card[] = [];
+    const notFoundCards: Card[] = [];
+    for (const card of cards) {
+        if (card.found) {
+            foundCards.push(card);
+        } else {
+            notFoundCards.push(card);
+        }
+    }
+
+    for (let i = notFoundCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [notFoundCards[i], notFoundCards[j]] = [notFoundCards[j], notFoundCards[i]];
+    }
+
+    const shuffledCards: Card[] = [...notFoundCards, ...foundCards];
+
+    return shuffledCards;
 }
 
 

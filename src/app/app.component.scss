@@ -34,6 +34,14 @@ button:hover {
     margin-bottom: 5px;
 }
 
+.found {
+    margin: auto;
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    margin-bottom: 5px; 
+}
+
 .container:last-child {
     margin-bottom: 0%;
 }
@@ -70,7 +78,7 @@ button:hover {
 
 // Mobile Design
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .row {
+    .row, .found {
         width: 100%;
     }
 
