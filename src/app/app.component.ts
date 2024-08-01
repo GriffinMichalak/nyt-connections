@@ -69,9 +69,17 @@ export class AppComponent implements OnInit {
     this.selectedCount = 0;
   }
 
-  submit() {
-    console.log(this.selectedCards);
+  submit() {  
+    const firstCategory = this.selectedCards[0].category;
+    const allSameCategory = this.selectedCards.every(card => card.category === firstCategory);
+  
+    if (allSameCategory) {
+      console.log('correct!');
+    } else {
+      console.log('incorrect');
+    }
   }
+  
 
   shuffleCards() {
     this.cards = this.shuffle(this.cards);
