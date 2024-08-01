@@ -1,31 +1,52 @@
 <!-- https://nyt-connections-nine.vercel.app/ -->
- <div class="main">
-   <!-- Heading -->
-   <div class="heading">
-     <h1>Connections</h1>
-     <p>Create four groups of four!</p>
-   </div>
-   <br>
- 
-   <!-- Cards -->
-   @for (i of [0,1,2,3]; track i) {
-     <div class="row">
-     @for (j of [0,1,2,3]; track j) {
-         <div 
-         (click)="selectCard(cards[i * 4 + j])"
-         [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
-         [style.background-color]="cards[i * 4 + j].selected ? '#555555' : '#e5e4e2'"
-         [style.color]="cards[i * 4 + j].selected ? '#ffffff' : 'black'">
-         {{cards[i * 4 + j].title}}</div>
-       }
+
+<div class="main">
+  @if (mistakes === 0) {
+    <div style="text-align: center;">
+      <br><br><br><br><br>
+      <h2>You Lose!</h2>
+      <div class="row" style="width: 10%;">
+        <button (click)="playAgain()" class="button-3" role="button">Play Again</button>
+       </div>  
+    </div>
+  }
+  @else {
+    <!-- Heading -->
+    <div class="heading">
+      <h1>Connections</h1>
+      <p>Create four groups of four!</p>
+    </div>
+    <br>
+  
+    <!-- Cards -->
+    @for (i of [0,1,2,3]; track i) {
+      <div class="row">
+      @for (j of [0,1,2,3]; track j) {
+          <div 
+          (click)="selectCard(cards[i * 4 + j])"
+          [ngClass]="{'card': true, 'selected': cards[i * 4 + j].selected}"
+          [style.background-color]="cards[i * 4 + j].selected ? '#555555' : '#e5e4e2'"
+          [style.color]="cards[i * 4 + j].selected ? '#ffffff' : 'black'">
+          {{cards[i * 4 + j].title}}</div>
+        }
+      </div>
+    }
+  
+    <!-- Buttons -->
+    <br>
+    <div class="row" style="width: 20%;">
+      <button (click)="shuffleCards()" class="button-3" role="button">Shuffle</button>
+      <button (click)="deselectAll()" class="button-3" role="button">Deselect All</button>
+      <button (click)="submit()" class="button-3" role="button" [disabled]="this.selectedCount!=4">Submit</button>
      </div>
-   }
- 
-   <!-- Buttons -->
-   <br>
-   <div class="row" style="width: 20%;">
-     <button (click)="shuffleCards()" class="button-3" role="button">Shuffle</button>
-     <button (click)="deselectAll()" class="button-3" role="button">Deselect All</button>
-     <button (click)="submit()" class="button-3" role="button" [disabled]="this.selectedCount!=4">Submit</button>
-   </div>
- </div>
+  
+     <!-- Mistakes -->
+     <div class="row" style="width: 20%;">
+      @if (mistakes == 4) { <p>Mistakes Remaining: X X X X</p> }
+      @else if (mistakes == 3) {<p>Mistakes Remaining: X X X</p> }
+      @else if (mistakes == 2) {<p>Mistakes Remaining: X X</p> }
+      @else if (mistakes == 1) {<p>Mistakes Remaining: X</p> }
+     </div>
+  }
+
+</div>

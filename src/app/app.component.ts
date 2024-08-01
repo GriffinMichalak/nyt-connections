@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  mistakes = 4; 
   maxSelections = 4;
   selectedCount = 0;
   selectedCards: Card[] = [];
@@ -74,9 +75,12 @@ export class AppComponent implements OnInit {
     const allSameCategory = this.selectedCards.every(card => card.category === firstCategory);
   
     if (allSameCategory) {
-      console.log('correct!');
+      console.log('correct');
+      this.selectedCards.forEach(card => card.found = true);
     } else {
       console.log('incorrect');
+      this.deselectAll();
+      this.mistakes--;
     }
   }
   
@@ -84,7 +88,11 @@ export class AppComponent implements OnInit {
   shuffleCards() {
     this.cards = this.shuffle(this.cards);
   }
-
+  
+  playAgain() {
+    location.reload();
+  }
+  
   shuffle(array: any[]) {
     for (var i = array.length - 1; i > 0; i--) { 
   
@@ -97,6 +105,7 @@ export class AppComponent implements OnInit {
      
   return array;
 }
+
 
   title = 'nyt-connections';
 }
