@@ -1,8 +1,12 @@
 # NYT Connections Clone
 
 This project is a clone of the popular game [Connections](https://www.nytimes.com/games/connections) by the New York Times.
-<br>
+<br><br>
 The app is available at https://nyt-connections-nine.vercel.app/.
+
+## Images
+<img src="/src/assets/images/connections1.png">
+<img src="/src/assets/images/connections2.png">
 
 ## Installation
 1. Clone this repository: `git clone https://github.com/GriffinMichalak/nyt-connections`
