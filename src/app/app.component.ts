@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-[x: string]: any;
+
   mistakes = 4; 
   connectionsFound = 0; 
   maxSelections = 4;
