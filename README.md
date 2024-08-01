@@ -5,8 +5,10 @@ This project is a clone of the popular game [Connections](https://www.nytimes.co
 The app is available at https://nyt-connections-nine.vercel.app/.
 
 ## Images
-<img src="/src/assets/images/connections1.png">
-<img src="/src/assets/images/connections2.png">
+<div style="display: flex; justify-content: space-between">
+    <img src="/src/assets/images/connections1.png">
+    <img src="/src/assets/images/connections2.png" >
+</div>
 
 ## Installation
 1. Clone this repository: `git clone https://github.com/GriffinMichalak/nyt-connections`
