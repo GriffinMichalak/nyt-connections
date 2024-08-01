@@ -18,28 +18,28 @@ export class AppComponent implements OnInit {
   
   cards: Card[] = [
     // YELLOW
-    new Card('GRUFF', 'RASPY', '#f9df6d', false, false),
-    new Card('HOARSE', 'RASPY', '#f9df6d', false, false),
-    new Card('HUSKY', 'RASPY', '#f9df6d', false, false),
-    new Card('ROUGH', 'RASPY', '#f9df6d', false, false),
+    new Card('GRUFF', 'RASPY', '#f9df6d'),
+    new Card('HOARSE', 'RASPY', '#f9df6d'),
+    new Card('HUSKY', 'RASPY', '#f9df6d'),
+    new Card('ROUGH', 'RASPY', '#f9df6d'),
     
     // GREEN
-    new Card('LITTLE', 'FINGERS', '#a0c35a', false, false),
-    new Card('MIDDLE', 'FINGERS', '#a0c35a', false, false),
-    new Card('POINTER', 'FINGERS', '#a0c35a', false, false),
-    new Card('RING', 'FINGERS', '#a0c35a', false, false),
+    new Card('LITTLE', 'FINGERS', '#a0c35a'),
+    new Card('MIDDLE', 'FINGERS', '#a0c35a'),
+    new Card('POINTER', 'FINGERS', '#a0c35a'),
+    new Card('RING', 'FINGERS', '#a0c35a'),
     
     // BLUE
-    new Card('AMBER', 'ALE STYLES', '#b0c4ef', false, false),
-    new Card('PORTER', 'ALE STYLES', '#b0c4ef', false, false),
-    new Card('SOUR', 'ALE STYLES', '#b0c4ef', false, false),
-    new Card('STOUT', 'ALE STYLES', '#b0c4ef', false, false),
+    new Card('AMBER', 'ALE STYLES', '#b0c4ef'),
+    new Card('PORTER', 'ALE STYLES', '#b0c4ef'),
+    new Card('SOUR', 'ALE STYLES', '#b0c4ef'),
+    new Card('STOUT', 'ALE STYLES', '#b0c4ef'),
     
     // PURPLE
-    new Card('BULLDOG', 'FRENCH ___', '#ba81c5', false, false),
-    new Card('FRY', 'FRENCH ___', '#ba81c5', false, false),
-    new Card('HORN', 'FRENCH ___', '#ba81c5', false, false),
-    new Card('KISS', 'FRENCH ___', '#ba81c5', false, false)
+    new Card('BULLDOG', 'FRENCH ___', '#ba81c5'),
+    new Card('FRY', 'FRENCH ___', '#ba81c5'),
+    new Card('HORN', 'FRENCH ___', '#ba81c5'),
+    new Card('KISS', 'FRENCH ___', '#ba81c5')
   ]; 
   
   ngOnInit(): void {
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
   playAgain() {
     location.reload();
   }
-  
+
   shuffle(array: any[]) {
     for (var i = array.length - 1; i > 0; i--) { 
   
