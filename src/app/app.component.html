@@ -24,8 +24,8 @@
    <!-- Buttons -->
    <br>
    <div class="row" style="width: 20%;">
-     <button class="button-3" role="button">Shuffle</button>
-     <button class="button-3" role="button">Deselect All</button>
-     <button class="button-3" role="button">Submit</button>
+     <button (click)="shuffleCards()" class="button-3" role="button">Shuffle</button>
+     <button (click)="deselectAll()" class="button-3" role="button">Deselect All</button>
+     <button [disabled]="this.selectedCount!=4" (click)="submit()" class="button-3" role="button">Submit</button>
    </div>
  </div>
