@@ -42,11 +42,6 @@
             [style.background-color]="cards[i * 4 + j].color"
             [style.color] = "'black'">
             {{cards[i * 4 + j].title}}</div>
-
-            <div class="found" [style.background-color]="cards[i * 4 + j].color">
-              <p>{{cards[i * 4 + j].category}}</p>
-              
-            </div>
           }
         <!-- Card is Not Selected -->
           @else if (!cards[i * 4 + j].selected) {
