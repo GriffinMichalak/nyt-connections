@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   mistakes = 4; 
+  connectionsFound = 0; 
   maxSelections = 4;
   selectedCount = 0;
   selectedCards: Card[] = [];

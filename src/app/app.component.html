@@ -5,10 +5,19 @@
     <div style="text-align: center;">
       <br><br><br><br><br>
       <h2>You Lose!</h2>
-      <div class="row" style="width: 10%;">
+      <div class="row playAgain" style="width: 10%; display: block;">
         <button (click)="playAgain()" class="button-3" role="button">Play Again</button>
        </div>  
     </div>
+  }
+  @else if (connectionsFound == 4) {
+    <div style="text-align: center;">
+      <br><br><br><br><br>
+      <h2>You Win!</h2>
+      <div class="row" style="width: 10%;">
+        <button (click)="playAgain()" class="button-3" role="button">Play Again</button>
+       </div>  
+    </div>   
   }
   @else {
     <!-- Heading -->
@@ -43,10 +52,10 @@
      <!-- Mistakes -->
     <br>
      <div id="mistakes" class="row" style="width: 20%; text-align: center;">
-      @if (mistakes == 4) { <p>Mistakes Remaining: X X X X</p> }
-      @else if (mistakes == 3) {<p>Mistakes Remaining: X X X</p> }
-      @else if (mistakes == 2) {<p>Mistakes Remaining: X X</p> }
-      @else if (mistakes == 1) {<p>Mistakes Remaining: X</p> }
+      @if (mistakes == 4) { <p>Mistakes Remaining: <b>X X X X</b></p> }
+      @else if (mistakes == 3) {<p>Mistakes Remaining: <b>X X X</b></p> }
+      @else if (mistakes == 2) {<p>Mistakes Remaining: <b>X X</b></p> }
+      @else if (mistakes == 1) {<p>Mistakes Remaining: <b>X</b></p> }
      </div>
   }
 
