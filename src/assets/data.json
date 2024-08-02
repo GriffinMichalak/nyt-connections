@@ -1,0 +1,23 @@
+{
+    "july31": [
+      {"title": "GRUFF", "category": "RASPY", "color": "#f9df6d"},
+      {"title": "HOARSE", "category": "RASPY", "color": "#f9df6d"},
+      {"title": "HUSKY", "category": "RASPY", "color": "#f9df6d"},
+      {"title": "ROUGH", "category": "RASPY", "color": "#f9df6d"},
+      
+      {"title": "LITTLE", "category": "FINGERS", "color": "#a0c35a"},
+      {"title": "MIDDLE", "category": "FINGERS", "color": "#a0c35a"},
+      {"title": "POINTER", "category": "FINGERS", "color": "#a0c35a"},
+      {"title": "RING", "category": "FINGERS", "color": "#a0c35a"},
+
+      {"title": "AMBER", "category": "ALE STYLES", "color": "#b0c4ef"},
+      {"title": "PORTER", "category": "ALE STYLES", "color": "#b0c4ef"},
+      {"title": "SOUR", "category": "ALE STYLES", "color": "#b0c4ef"},
+      {"title": "STOUT", "category": "ALE STYLES", "color": "#b0c4ef"},
+      
+      {"title": "BULLDOG", "category": "FRENCH ___", "color": "#ba81c5"},
+      {"title": "FRY", "category": "FRENCH ___", "color": "#ba81c5"},
+      {"title": "HORN", "category": "FRENCH ___", "color": "#ba81c5"},
+      {"title": "KISS", "category": "FRENCH ___", "color": "#ba81c5"}
+    ]
+  }

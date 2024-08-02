@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { Card } from '../models/card';
 import { CommonModule } from '@angular/common';
 
+import * as data from '../assets/data.json';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,42 +14,25 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent implements OnInit {
 
+  data: any = data.july31;
+
+  cards: Card[] = []; 
+
   mistakes = 4; 
   connectionsFound = 0; 
   maxSelections = 4;
   selectedCount = 0;
   selectedCards: Card[] = [];
   
-  cards: Card[] = [
-    // YELLOW
-    new Card('GRUFF', 'RASPY', '#f9df6d'),
-    new Card('HOARSE', 'RASPY', '#f9df6d'),
-    new Card('HUSKY', 'RASPY', '#f9df6d'),
-    new Card('ROUGH', 'RASPY', '#f9df6d'),
-    
-    // GREEN
-    new Card('LITTLE', 'FINGERS', '#a0c35a'),
-    new Card('MIDDLE', 'FINGERS', '#a0c35a'),
-    new Card('POINTER', 'FINGERS', '#a0c35a'),
-    new Card('RING', 'FINGERS', '#a0c35a'),
-    
-    // BLUE
-    new Card('AMBER', 'ALE STYLES', '#b0c4ef'),
-    new Card('PORTER', 'ALE STYLES', '#b0c4ef'),
-    new Card('SOUR', 'ALE STYLES', '#b0c4ef'),
-    new Card('STOUT', 'ALE STYLES', '#b0c4ef'),
-    
-    // PURPLE
-    new Card('BULLDOG', 'FRENCH ___', '#ba81c5'),
-    new Card('FRY', 'FRENCH ___', '#ba81c5'),
-    new Card('HORN', 'FRENCH ___', '#ba81c5'),
-    new Card('KISS', 'FRENCH ___', '#ba81c5')
-  ]; 
-  
   ngOnInit(): void {
     this.cards = this.shuffle(this.cards); 
-  }
+    console.log('Data', this.data);
 
+    this.data.forEach((item: any) => {
+      this.cards.push(new Card(item.title, item.category, item.color)); 
+    });
+  }
+  
   selectCard(card: Card) {
     // deselect card
     if (card.selected) {
