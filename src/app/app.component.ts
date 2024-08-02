@@ -14,7 +14,7 @@ import * as data from '../assets/data.json';
 })
 export class AppComponent implements OnInit {
 
-  data: any = data.july31;
+  data: any = data.July_31_2024;
 
   cards: Card[] = []; 
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   
   ngOnInit(): void {
     // console.log('Data', this.data);
-    
+
     this.data.forEach((item: any) => {
       this.cards.push(new Card(item.title, item.category, item.color)); 
     });
