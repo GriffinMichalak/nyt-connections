@@ -1,4 +1,4 @@
-# NYT Connections Clone
+# NYT Connections Archive
 
 This project is a clone of the popular game [Connections](https://www.nytimes.com/games/connections) by the New York Times.
 <br><br>
