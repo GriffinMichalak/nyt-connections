@@ -14,7 +14,7 @@ import * as data from '../assets/data.json';
 })
 export class AppComponent implements OnInit {
 
-  data: any = data.July_31_2024;
+  data: any = data.August_01_2024;
 
   cards: Card[] = []; 
 

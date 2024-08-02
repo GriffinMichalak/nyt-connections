@@ -19,5 +19,27 @@
       {"title": "FRY", "category": "FRENCH ___", "color": "#ba81c5"},
       {"title": "HORN", "category": "FRENCH ___", "color": "#ba81c5"},
       {"title": "KISS", "category": "FRENCH ___", "color": "#ba81c5"}
+    ],
+
+    "August_01_2024": [
+      {"title": "HYPE", "category": "PROMOTE", "color": "#f9df6d"},
+      {"title": "MARKET", "category": "PROMOTE", "color": "#f9df6d"},
+      {"title": "PITCH", "category": "PROMOTE", "color": "#f9df6d"},
+      {"title": "SELL", "category": "PROMOTE", "color": "#f9df6d"},
+      
+      {"title": "CAST", "category": "THROW", "color": "#a0c35a"},
+      {"title": "CHUNK", "category": "THROW", "color": "#a0c35a"},
+      {"title": "FLING", "category": "THROW", "color": "#a0c35a"},
+      {"title": "HURL", "category": "THROW", "color": "#a0c35a"},
+
+      {"title": "FICTION", "category": "BOOKSTORE SECTIONS", "color": "#b0c4ef"},
+      {"title": "HUMOR", "category": "BOOKSTORE SECTIONS", "color": "#b0c4ef"},
+      {"title": "ROMANCE", "category": "BOOKSTORE SECTIONS", "color": "#b0c4ef"},
+      {"title": "TRAVEL", "category": "BOOKSTORE SECTIONS", "color": "#b0c4ef"},
+      
+      {"title": "ANKLE", "category": "___ SOCKS", "color": "#ba81c5"},
+      {"title": "CREW", "category": "___ SOCKS", "color": "#ba81c5"},
+      {"title": "SWEAT", "category": "___ SOCKS", "color": "#ba81c5"},
+      {"title": "TUBE", "category": "___ SOCKS", "color": "#ba81c5"}
     ]
   }
