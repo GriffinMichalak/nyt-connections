@@ -25,12 +25,12 @@ export class AppComponent implements OnInit {
   selectedCards: Card[] = [];
   
   ngOnInit(): void {
-    this.cards = this.shuffle(this.cards); 
-    console.log('Data', this.data);
-
+    // console.log('Data', this.data);
+    
     this.data.forEach((item: any) => {
       this.cards.push(new Card(item.title, item.category, item.color)); 
     });
+    this.cards = this.shuffle(this.cards); 
   }
   
   selectCard(card: Card) {
